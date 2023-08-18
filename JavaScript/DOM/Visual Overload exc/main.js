@@ -23,6 +23,24 @@ const numberOfBoxes = parseInt(prompt("How many boxes do you want to create?"))
 for (let i = 0; i < numberOfBoxes; i++) {
     creatBox();
 }
+  // Check if all boxes have the same color
+  const boxes = document.querySelectorAll(".box");
+  const firstBoxColor = boxes[0].style.backgroundColor;
+  let allBoxesSameColor = true;
+  
+  for (let i = 1; i < boxes.length; i++) {
+    if (boxes[i].style.backgroundColor !== firstBoxColor) {
+      allBoxesSameColor = false;
+      break;
+    }
+  }
+  
+  // Display "Nice job!" if all boxes have the same color
+  if (allBoxesSameColor) {
+    const message = document.createElement("p");
+    message.textContent = "Nice job!";
+    container.appendChild(message);
+  }
 
 
 /*

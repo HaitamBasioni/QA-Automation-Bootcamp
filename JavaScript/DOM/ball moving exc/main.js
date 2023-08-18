@@ -59,3 +59,29 @@ const moveLeft = function(){
   }
   ball.style.left = left + "px"
 }
+let ballX = 0;
+let ballY = 0;
+ball.style.left = ballX + 'px';
+ball.style.top = ballY + 'px';
+
+// Keyboard event listener to handle ball movement
+window.addEventListener('keydown', (event) => {
+  // Get the dimensions of the playing field
+  const fieldWidth = playingField.offsetWidth;
+  const fieldHeight = playingField.offsetHeight;
+
+  // Move the ball based on the arrow key pressed and ensure it stays within the field bounds
+  if (event.key === 'ArrowUp' && ballY > 0) {
+    ballY -= 10; // Move up
+  } else if (event.key === 'ArrowDown' && ballY < fieldHeight - 50) {
+    ballY += 10; // Move down
+  } else if (event.key === 'ArrowLeft' && ballX > 0) {
+    ballX -= 10; // Move left
+  } else if (event.key === 'ArrowRight' && ballX < fieldWidth - 50) {
+    ballX += 10; // Move right
+  }
+
+  // Update ball position
+  ball.style.left = ballX + 'px';
+  ball.style.top = ballY + 'px';
+});

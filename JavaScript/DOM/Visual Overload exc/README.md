@@ -15,3 +15,7 @@ Use ‘Bob’ and ‘Ted’ to test your code:
 - When you test Ted, it should say “Hmm, someone already claimed this reservation”
 - If you try a different name, it should say “You have no reservation”
 
+Visual Overload Extension
+===
+Display a message below the boxes that says “Nice job!” if all the boxes are the same color.
+
